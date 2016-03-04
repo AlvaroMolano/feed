@@ -13,7 +13,7 @@ fetchAtomRss = function (feed) {
     var req = request(options);                                                                                  // 9
     var feedparser = new Feedparser();  
     feedparser = new Feedparser();
-    req.headers= { 'content-type': 'application/json; charset=UTF-8' };  
+
     req.on('error', function (error) {
         // handle any request errors
         console.log("req error: " + error);
