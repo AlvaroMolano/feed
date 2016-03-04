@@ -8,12 +8,13 @@ fetchAtomRss = function (feed) {
     // Define our streams
     var options = {
       url: feed.link, 
-      headers: { 'content-type': 'charset=UTF-8' }
+      headers: { 'content-type': 'application/x-www-form-urlencoded; charset=UTF-8' }
     };                                                                                     // 8
     var req = request(options);                                                                                  // 9
+    req.setEncoding('utf8');
     var feedparser = new Feedparser();  
     feedparser = new Feedparser();
-
+  
     req.on('error', function (error) {
         // handle any request errors
         console.log("req error: " + error);
