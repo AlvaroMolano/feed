@@ -11,7 +11,7 @@ fetchAtomRss = function (feed) {
       headers: { 'content-type': 'application/x-www-form-urlencoded; charset=UTF-8' }
     };                                                                                     // 8
     var req = request(options);                                                                                  // 9
-    req.setEncoding('utf8');
+    
     var feedparser = new Feedparser();  
     feedparser = new Feedparser();
   
