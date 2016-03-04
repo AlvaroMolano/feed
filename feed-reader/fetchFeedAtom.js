@@ -6,7 +6,12 @@ var request = Npm.require('request');
 fetchAtomRss = function (feed) {
 
     // Define our streams
-    var req = request(feed.link),
+    var options = {
+      url: feed.link, 
+      headers: { 'content-type': 'application/json; charset=UTF-8' }
+    };                                                                                     // 8
+    var req = request(options);                                                                                  // 9
+    var feedparser = new Feedparser();  
     feedparser = new Feedparser();
     req.headers= { 'content-type': 'application/json; charset=UTF-8' };  
     req.on('error', function (error) {
